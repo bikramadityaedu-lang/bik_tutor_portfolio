@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ewbMission } from '../data/siteData';
 import { Heart, Users, CheckCircle, Sparkles, HandHeart } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
+import educatorPhoto from '../assets/educator_photo.jpg';
 
 export default function EWBSection({ onOpenEnquiry }) {
   return (
@@ -62,7 +64,7 @@ export default function EWBSection({ onOpenEnquiry }) {
 
           </motion.div>
 
-          {/* Right Column: Custom Abstract Community Vector Graphic */}
+          {/* Right Column: Classroom Teaching Photo Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -70,31 +72,16 @@ export default function EWBSection({ onOpenEnquiry }) {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="lg:col-span-5 flex justify-center"
           >
-            <div className="w-full max-w-[400px] aspect-square rounded-3xl p-6 glass-card border border-rose-500/20 relative flex flex-col items-center justify-center text-center space-y-6">
-              
-              {/* SVG Abstract Human Knowledge Network */}
-              <svg viewBox="0 0 200 200" className="w-48 h-48 text-rose-400" fill="none">
-                <circle cx="100" cy="100" r="80" stroke="currentColor" strokeOpacity="0.15" strokeWidth="2" strokeDasharray="4 4"/>
-                <circle cx="100" cy="100" r="55" stroke="currentColor" strokeOpacity="0.3" strokeWidth="2"/>
-                
-                {/* Central Teacher Node */}
-                <circle cx="100" cy="70" r="16" fill="#f43f5e" fillOpacity="0.2" stroke="#f43f5e" strokeWidth="2"/>
-                <path d="M85 105C85 95 115 95 115 105" stroke="#f43f5e" strokeWidth="2" strokeLinecap="round"/>
-
-                {/* Surrounding Student Nodes */}
-                <circle cx="50" cy="140" r="10" fill="#38bdf8" fillOpacity="0.2" stroke="#38bdf8" strokeWidth="2"/>
-                <circle cx="100" cy="155" r="10" fill="#34d399" fillOpacity="0.2" stroke="#34d399" strokeWidth="2"/>
-                <circle cx="150" cy="140" r="10" fill="#fbbf24" fillOpacity="0.2" stroke="#fbbf24" strokeWidth="2"/>
-
-                {/* Connecting Knowledge Lines */}
-                <line x1="100" y1="105" x2="50" y2="130" stroke="#f43f5e" strokeOpacity="0.4" strokeWidth="1.5" strokeDasharray="2 2"/>
-                <line x1="100" y1="105" x2="100" y2="145" stroke="#f43f5e" strokeOpacity="0.4" strokeWidth="1.5" strokeDasharray="2 2"/>
-                <line x1="100" y1="105" x2="150" y2="130" stroke="#f43f5e" strokeOpacity="0.4" strokeWidth="1.5" strokeDasharray="2 2"/>
-              </svg>
-
-              <div>
-                <span className="font-heading font-bold text-lg text-slate-100 block">Community Teaching</span>
-                <span className="text-xs text-rose-300 font-medium">Engineers Without Borders • OUTR</span>
+            <div className="w-full relative rounded-3xl overflow-hidden border border-rose-500/30 shadow-2xl group">
+              <img 
+                src={educatorPhoto} 
+                alt="Bikramaditya Sahoo with students - EWB Social Education Mission" 
+                className="w-full h-[360px] sm:h-[420px] object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#091024] via-[#091024]/30 to-transparent opacity-85" />
+              <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl glass-panel border border-rose-500/30 bg-[#0c142c]/90 backdrop-blur-md">
+                <span className="font-heading font-bold text-sm text-slate-100 block">Social Education Mission</span>
+                <span className="text-xs text-rose-300 font-medium block mt-0.5">Voluntary weekend teaching with EWB OUTR</span>
               </div>
             </div>
           </motion.div>
